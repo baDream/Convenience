@@ -18,7 +18,6 @@ import java.util.List;
 
 import kr.badream.convenience.LoginActivity;
 import kr.badream.convenience.Menu_View.Activity_Search;
-import kr.badream.convenience.Menu_View.Activity_map;
 import kr.badream.convenience.R;
 import kr.badream.convenience.User;
 import kr.badream.convenience.View.Activity_register_review;
@@ -98,45 +97,45 @@ public class Helper_server {
     }
 
     //맵데이터 요청
-    public static void loadMapListWithRetrofit(final Activity context, final int storeID){
-        final ProgressDialog mProgressDialog = new ProgressDialog(context);
-        mProgressDialog.setIndeterminate(true);
-        mProgressDialog.setProgressStyle(R.attr.progressBarStyle);
-        mProgressDialog.setMessage("Loading...");
-        mProgressDialog.show();
-
-        ApiInterface mApiService = Helper_server.getInterfaceService();
-        Call<List<Helper_mapData>> mService = mApiService.loadMapList(storeID);
-
-        mService.enqueue(new Callback<List<Helper_mapData>>() {
-            @Override
-            public void onResponse(Call<List<Helper_mapData>> call, Response<List<Helper_mapData>> response) {
-
-                List<Helper_mapData> mlistObject = response.body();
-
-                Activity_map.map_data = new ArrayList<Helper_mapData>();
-                for( Helper_mapData data : mlistObject) {
-                    Activity_map.map_data.add(data);
-                }
-                if (mProgressDialog.isShowing())
-                    mProgressDialog.dismiss();
-
-                Intent activity_map = new Intent( context , Activity_map.class);
-                activity_map.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                activity_map.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                context.startActivity(activity_map);
-            }
-            @Override
-            public void onFailure(Call<List<Helper_mapData>> call, Throwable t) {
-                call.cancel();
-
-                if (mProgressDialog.isShowing())
-                    mProgressDialog.dismiss();
-
-                Toast.makeText( context, "Please check your network connection and internet permission", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
+//    public static void loadMapListWithRetrofit(final Activity context, final int storeID){
+//        final ProgressDialog mProgressDialog = new ProgressDialog(context);
+//        mProgressDialog.setIndeterminate(true);
+//        mProgressDialog.setProgressStyle(R.attr.progressBarStyle);
+//        mProgressDialog.setMessage("Loading...");
+//        mProgressDialog.show();
+//
+//        ApiInterface mApiService = Helper_server.getInterfaceService();
+//        Call<List<Helper_mapData>> mService = mApiService.loadMapList(storeID);
+//
+//        mService.enqueue(new Callback<List<Helper_mapData>>() {
+//            @Override
+//            public void onResponse(Call<List<Helper_mapData>> call, Response<List<Helper_mapData>> response) {
+//
+//                List<Helper_mapData> mlistObject = response.body();
+//
+//                Activity_map.map_data = new ArrayList<Helper_mapData>();
+//                for( Helper_mapData data : mlistObject) {
+//                    Activity_map.map_data.add(data);
+//                }
+//                if (mProgressDialog.isShowing())
+//                    mProgressDialog.dismiss();
+//
+//                Intent activity_map = new Intent( context , Activity_map.class);
+//                activity_map.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                activity_map.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                context.startActivity(activity_map);
+//            }
+//            @Override
+//            public void onFailure(Call<List<Helper_mapData>> call, Throwable t) {
+//                call.cancel();
+//
+//                if (mProgressDialog.isShowing())
+//                    mProgressDialog.dismiss();
+//
+//                Toast.makeText( context, "Please check your network connection and internet permission", Toast.LENGTH_LONG).show();
+//            }
+//        });
+//    }
 
     //편의점 카테고리별 데이터 요청
     public static void loadStoreCategoryListWithRetrofit(final Activity context,final int userID, final int storeID, final int mainCategory, final int listIndex){

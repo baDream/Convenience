@@ -60,7 +60,7 @@
             android:name=".tests"
             android:label="@string/title_activity_login" />
         <activity android:name=".Main.Main_Activity" />
-        <activity android:name=".Menu_View.Activity_map" />
+        <!--<activity android:name=".Menu_View.Activity_map" />-->
         <activity android:name=".View.Activity_ctgView" />
         <activity android:name=".View.View_item_list" />
         <activity android:name=".View.View_item_info" />

@@ -14,7 +14,6 @@ import android.widget.TextView;
 import kr.badream.convenience.Menu_View.Activity_Rank;
 import kr.badream.convenience.Menu_View.Activity_Search;
 import kr.badream.convenience.Menu_View.Activity_compare;
-import kr.badream.convenience.Menu_View.Activity_map;
 import kr.badream.convenience.Menu_View.Activity_mylike;
 import kr.badream.convenience.Menu_View.Activity_myreview;
 import kr.badream.convenience.R;
@@ -88,11 +87,11 @@ public class Define_menu_click{
                 context.startActivity(activity_mylike);
             }
         });
-        menu_conv.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Helper_server.loadMapListWithRetrofit( activity , ALLCATEGORY);
-            }
-        });
+//        menu_conv.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View v) {
+//                Helper_server.loadMapListWithRetrofit( activity , ALLCATEGORY);
+//            }
+//        });
         menu_rank.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent activity_Rank = new Intent( context , Activity_Rank.class);
