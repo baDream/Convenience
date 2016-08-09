@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -28,6 +29,7 @@ import java.util.ArrayList;
 
 import kr.badream.convenience.Helper.Define_menu_click;
 import kr.badream.convenience.R;
+import kr.badream.convenience.fcm.MyFirebaseAnalytics;
 
 public class Activity_conView extends AppCompatActivity implements View.OnClickListener {
 
@@ -114,16 +116,22 @@ public class Activity_conView extends AppCompatActivity implements View.OnClickL
             case R.id.cu_image:
                 ctgview_intent.putExtra("storeID", 1);
                 startActivity(ctgview_intent);
+
+                MyFirebaseAnalytics.sendLog(this, MyFirebaseAnalytics.CSTORE, 1, "CU");
                 break;
 
             case R.id.withme_image:
                 ctgview_intent.putExtra("storeID", 2);
                 startActivity(ctgview_intent);
+
+                MyFirebaseAnalytics.sendLog(this, MyFirebaseAnalytics.CSTORE, 2, "WITHME");
                 break;
 
             case R.id.ge25_image:
                 ctgview_intent.putExtra("storeID", 3);
                 startActivity(ctgview_intent);
+
+                MyFirebaseAnalytics.sendLog(this, MyFirebaseAnalytics.CSTORE, 3, "GS25");
                 break;
 
             case R.id.seven_image:

@@ -31,6 +31,7 @@ import kr.badream.convenience.Helper.Helper_sort;
 import kr.badream.convenience.Helper.LoginHelper;
 import kr.badream.convenience.Helper.MyCallback;
 import kr.badream.convenience.R;
+import kr.badream.convenience.fcm.MyFirebaseAnalytics;
 
 /**
  * Created by Administrator on 2016-06-04.
@@ -176,6 +177,8 @@ public class View_item_list extends AppCompatActivity {
                 String descStr = item.price;
 
                 Helper_server.loadItemInfoListWithRetrofit(View_item_list.this, LoginHelper.getUserID(getApplicationContext()), item.prodID);
+
+                MyFirebaseAnalytics.sendLog(getApplicationContext(), MyFirebaseAnalytics.PROD,item.prodID,item.name);
             }
         });
 
