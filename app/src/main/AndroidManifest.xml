@@ -78,6 +78,21 @@
         <activity android:name=".View.Activity_register_review"></activity>
         <activity android:name=".Menu_View.Activity_Search" />
         <activity android:name=".View.Activity_view_review"></activity>
+
+
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

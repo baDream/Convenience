@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "402686401682",
+    "firebase_url": "https://convenience-know.firebaseio.com",
+    "project_id": "convenience-know",
+    "storage_bucket": "convenience-know.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402686401682:android:69ceeabdb2d66a11",
+        "android_client_info": {
+          "package_name": "kr.badream.convenience"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402686401682-n909531v89io52o4uci5datoe3fp0qeb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1WdIiA9gSV2rVqgq61jjgxGSCpv9rQM8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

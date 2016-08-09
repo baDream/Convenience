@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
@@ -79,6 +80,9 @@ public class Activity_conView extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conview);
+
+        //FCM 받아볼 토픽 등록
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
 
         new TedPermission(this)
                 .setPermissionListener(permissionlistener)
