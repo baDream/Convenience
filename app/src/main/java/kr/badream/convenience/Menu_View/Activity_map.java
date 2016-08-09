@@ -108,9 +108,10 @@ public class Activity_map extends ActionBarActivity implements LocationListener 
                 case 1 :
                     map.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.mini_cu)).position(position).title("cu " + data.storeName));
                     break;
-                case 2 :
+                /*case 2 :
                     map.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.mini_gs25)).position(position).title("gs25 " + data.storeName));
                     break;
+                    */
             }
 
         }
